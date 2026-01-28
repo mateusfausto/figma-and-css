@@ -105,6 +105,47 @@ body {
     font-size: 1rem;
 }
 
+.orientation-lock {
+    position: fixed;
+    inset: 0;
+    background: #0f172a;
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 2000;
+}
+
+.orientation-lock-card {
+    max-width: 420px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    padding: 2rem;
+    display: grid;
+    gap: 0.75rem;
+    place-items: center;
+}
+
+.orientation-lock-card i {
+    font-size: 2.5rem;
+    color: var(--figma-red);
+}
+
+.orientation-lock-card h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.orientation-lock-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* ========== Sections ========== */
 section {
     padding: 100px 0;
@@ -744,6 +785,18 @@ section {
 
     .demo-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) and (orientation: portrait) {
+    body {
+        overflow: hidden;
+        height: 100vh;
+        touch-action: none;
+    }
+
+    .orientation-lock {
+        display: flex;
     }
 }
 
